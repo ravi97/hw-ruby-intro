@@ -47,4 +47,37 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  def initialize(isbn,price)
+      if isbn.length > 0 && price > 0
+        @isbn = isbn
+        @price = price
+      else
+        raise ArgumentError
+      end
+  end
+  
+  #getter for ISBN
+  def isbn
+    return @isbn
+  end
+  
+  #setter for ISBN
+  def isbn=(new_isbn)
+    @isbn = new_isbn
+  end
+  
+  #getter for price
+  def price
+    @price
+  end
+  
+  #setter for price
+  def price=(new_price)
+    @price = new_price
+  end
+  
+  def price_as_string
+    "$"+ '%.2f' % @price.round(2).to_s
+  end
+
 end
